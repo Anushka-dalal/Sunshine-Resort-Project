@@ -58,29 +58,3 @@ class delete(APIView):
 def gallery(request):
     return render(request,"bookingapp/gallery.html")
 
-
-        
-
-
-
-
-
-
-# Create your views here.
-# @api_view(['GET'])
-# def firstview(request):
-#     str = "Hello World"
-#     context = {'data': str}
-#     # return Response(str)
-#     return render(request,"bookingApp/index.html",context)
-
-# class first_classview(APIView):
-#     def get(self,request):
-#         data = {
-#             'name' : 'Anushka',
-#             'age'  : 21,
-#             'course' : 'Python'
-#         }
-#         context = {'data':data}
-#         # return Response(data)
-#         return render(request,"bookingApp/index.html",context)
