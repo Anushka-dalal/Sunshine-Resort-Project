@@ -1,0 +1,50 @@
+{%extends 'bookingapp/index.html' %}
+
+{% block title %}Gallery Page{% endblock %}
+
+{% load static %}
+{% block content %}
+<section>
+    <strong><h1 class="display-4" style="text-align: center; height: 80px; line-height:80px; background: linear-gradient(90deg, #2193b0 0%, #ffb347 100%); color: white; border-radius: 10px;">Gallery</h1></strong><br>
+</section>
+
+<style>
+  .masonry {
+    column-count: 3;
+    column-gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+  .masonry-item img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  @media (max-width: 900px) {
+    .masonry { column-count: 2; }
+  }
+  @media (max-width: 600px) {
+    .masonry { column-count: 1; }
+  }
+</style>
+
+<div class="masonry">
+  <div class="masonry-item"><img src="{% static 'images/image1.jpeg' %}" alt="Gallery 1"></div>
+  <div class="masonry-item"><img src="{% static 'images/image2.jpg' %}" alt="Gallery 2"></div>
+  <div class="masonry-item"><img src="{% static 'images/image3.jpeg' %}" alt="Gallery 3"></div>
+  <div class="masonry-item"><img src="{% static 'images/image8.jpeg' %}" alt="Gallery 4"></div>
+  <div class="masonry-item"><img src="{% static 'images/image7.jpeg' %}" alt="Gallery 5"></div>
+  <div class="masonry-item"><img src="{% static 'images/image6.jpg' %}" alt="Gallery 6"></div>
+  <div class="masonry-item"><img src="{% static 'images/image9.jpg' %}" alt="Gallery 7"></div>
+  <div class="masonry-item"><img src="{% static 'images/image10.jpg' %}" alt="Gallery 8"></div>
+</div>
+{% endblock %}
+

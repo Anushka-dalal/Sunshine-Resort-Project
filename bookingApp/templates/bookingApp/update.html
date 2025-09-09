@@ -1,0 +1,46 @@
+{%extends 'bookingapp/index.html' %}
+
+{% block title %}Update Page{% endblock %}
+
+
+{% load static %}
+{% block content %}
+<h1 style="text-align: center;">{{obj.name}}'s Update Page</h1>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="w-100" style="max-width: 800px;">
+    <form action = "/update/{{obj.id}}" method="POST">
+      <div class="form-group"> {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputPassword1">Name</label>
+          <input type="text" class="form-control" name="name" value="{{obj.name}}" required>
+        </div>
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{obj.email}}" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mobile</label>
+        <input type="number" class="form-control" name="mobile" value="{{obj.mobile}}" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">no of people</label>
+        <input type="number" class="form-control" name="people" value="{{obj.people}}" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Check-in Date </label>
+        <input type="date" class="form-control" name="check_in" value="{{obj.check_in}}" required>
+      </div>
+      <div class="form-group">
+        <label for="roomType">Room Type</label>
+        <select class="form-control" id="room_type" name="room_type" value="{{obj.room_type}}" required>
+          <option value="single">Single</option>
+          <option value="double">Double</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Update</button>
+    </form>
+  </div>
+</div>
+<br>
+{% endblock %}

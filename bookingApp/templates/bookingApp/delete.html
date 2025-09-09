@@ -1,0 +1,23 @@
+{%extends 'bookingapp/index.html' %}
+    
+{% block title %}Delete Booking{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+<h5>Booking : {{obj.id}}</h5>
+<h5> Objects: {{obj.name}} on {{obj.check_in}} </h5>
+</div>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 120px;">
+  <div style="width: 320px;">
+    <form action="/delete/{{obj.id}}"  method="POST">{% csrf_token %}
+      <button class="btn btn-danger btn-block mb-2 py-2" type="submit" style="font-size:1rem;">Yes, I'm sure</button>
+    </form>
+    <form action="/display/" method="get">
+      <button class="btn btn-success btn-block py-2" type="submit" style="font-size:1rem;">No, Take me back</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
