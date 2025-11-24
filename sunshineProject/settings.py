@@ -80,13 +80,13 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 
-    'default': {                  # mySqlclient Database
+    'default': {                 
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sunshine_db',
-        'USER': 'root',
-        'PASSWORD': '@Nushka1210',
-        'HOST': 'localhost',       # Or your DB host
-        'PORT': '3306',            # Default MySQL port
+        'USER': '',
+        'PASSWORD': '', 
+        'HOST': 'localhost',      
+        'PORT': '3306',            
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
